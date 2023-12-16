@@ -7,14 +7,22 @@
      </title>
    </head>
    <body>
-      <input type="text" id="nombre">
-      <button id="amor">ingresar</button>
+      <input type="text" id="nombre" placeholder="nombre">
+      <button id="amor">Escriba su nombre</button>
       <style>
            body{
              background:white;
            }
            #nombre,#amor{
              border-color:hsla(130,100%,50%,0.9) ;
+             width: 200px;
+             height:40px;
+             display:inline-block;
+           }
+           #amor{
+             width: 120px;
+             height: 34px;
+             
            }
       </style>
       <script>
@@ -24,9 +32,15 @@
             btn.addEventListener("click",iniciar2);
           }
           function iniciar2(){
+            if(nombre.value===""){
+              alert("ingresa tu nombre:")
+            }else{
+              
+            
             nmbr=document.getElementById("nombre").value;
-            alert("Hola: "+nmbr);
+            alert("Hola: "+nmbr+" encantado en responderte");
             document.getElementById("nombre").value="";
+            }
           }
           window.addEventListener("load",iniciar);
       </script>
