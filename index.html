@@ -2,28 +2,27 @@
 <html>
    <head>
      <title>
-       fuego y pasion;
-       
+       Suerte y tiempo
+       <meta name="viewport" content="width=device=width, initial-scale=1.0">
      </title>
    </head>
    <body>
       <input type="text" id="nombre" placeholder="nombre">
+      <br>
+      <br>
       <button id="amor">Escriba su nombre</button>
       <style>
-           body{
-             background:white;
+           @media only screen and(width-max:600px){
+              #amor,#nombre{
+                font-size: 18px;
+                padding: 20px 40px;
+                
+              }
            }
-           #nombre,#amor{
-             border-color:hsla(130,100%,50%,0.9) ;
-             width: 200px;
-             height:40px;
-             display:inline-block;
-           }
-           #amor{
-             width: 120px;
-             height: 34px;
-             
-           }
+          #amor,#nombre{
+              padding: 10px 20px;  
+              cursor: pointer;
+          }
       </style>
       <script>
           function iniciar(){
