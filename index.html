@@ -6,24 +6,27 @@
        <meta name="viewport" content="width=device=width, initial-scale=1.0">
      </title>
    </head>
-   <body>
+   <body id="body">
       <input type="text" id="nombre" placeholder="nombre">
       <br>
       <br>
       <button id="amor">Escriba su nombre</button>
       <style>
-           @media only screen and(width-max:600px){
-              #amor,#nombre{
-                font-size: 18px;
-                padding: 20px 40px;
-                
-              }
-           }
-          #amor,#nombre{
-              padding: 10px 20px;  
-              cursor: pointer;
+          @media(max-width=767px){
+            #body{
+               position: absolute;
+               
+            }
           }
+          #amor{
+           color:hsla(130,100%,50%,0.9);
+           border: hsla(130,100%,50%,0.9);
+          }
+  
+  
+   
       </style>
+      
       <script>
           function iniciar(){
             nombre=document.getElementById("nombre");
