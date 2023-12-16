@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
    <head>
-     <title>
-       Suerte y tiempo
+     <title>fuego y suerte</title>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-compatible" content="IE-edge">
        <meta name="viewport" content="width=device=width, initial-scale=1.0">
-     </title>
+    
    </head>
    <body id="body">
+     <div id="principal">
       <input type="text" id="nombre" placeholder="nombre">
       <br>
       <br>
-      <button 
-    android:layout_width="wrap_content";
-    android:layout_height="wrap_content";
-    android:layout_margin="16dp";
+      <button
   id="amor"
-  >Escriba su nombre</button>
+  >Enviar su nombre</button>
+  </div>
       <style>
-          @media(max-width=767px){
-            #body{
-               position: absolute;
-               
-            }
-          }
+      #principal{
+        width: 99%;
+      }
+     @media(max-width:767px){
+    
           #amor,#nombre{
            color:purple;
            border-color: hsla(130,100%,50%,0.9);
            border-radius:5px 5px 5px 5px ;
           }
-          #amor,#nombre{
-            width: 200px;
+          #amor{
+             width:200px;
             height:40px;
+           }
+           #nombre{
+             width: 200px;
+             height:40px
+           }
           }
-  
   
    
       </style>
