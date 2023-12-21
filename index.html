@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
    <head>
-     <title>Tiempo y suerte</title>
+     <title>Feliz Navidad</title>
        <meta charset="UTF-8">
        <meta http-equiv="X-UA-compatible" content="IE-edge">
        <meta name="viewport" content="width=device=width, initial-scale=1.0">
     
    </head>
-   <body id="body">
-     <h1>juego,suerte y tiempo:</h1>
+   <body id="todo">
+     <h1 id="ttl">Estilo Navideño(EN): </h1>
      <div id="principal">
       
       <input type="text" id="nombre" placeholder="nombre">
@@ -16,9 +16,13 @@
       <br>
       <button
   id="amor"
-  >Enviar su nombre</button>
+  >Ingresar</button>
+  <div id="ale">
+   <div id="ale"></div>
+   </div>
   </div>
       <style>
+      
       h1{
         color: hsla(130,100%,50%,0.9);
         -webkit-text-stroke:1px purple;
@@ -43,6 +47,12 @@
              width: 200px;
              height:40px;
            }
+           #ale{
+             color: hsla(130,100%,50%,0.9);
+             
+         
+           }
+         
           }
   
    
@@ -58,13 +68,39 @@
             if(nombre.value===""){
               alert("ingresa tu nombre:")
             }else{
-              
+              nombre.style.display="none";
+              var btn=document.getElementById("amor");
+              btn.style.display="none";
             
             nmbr=document.getElementById("nombre").value;
-            alert("Hola: "+nmbr+" encantado en responderte");
+            crear=document.getElementById("ale");
+            crear.innerHTML="Feliz Navidad  "+nmbr;
+            crear.style.display="flex";
+           crear.style.justifyContent="center";
+           crear.style.alignItems="center";
+           crear.style.fontWeight="900";
+           crear.style.fontSize="90px";
+           
+            document.body.appendChild(crear);
             document.getElementById("nombre").value="";
             }
+            function uno(){
+              colores=["purple","green","red","blue","yellow","orange","pink","black","white","cyan","magenta","turquoise","lavander","indigo","maroon","olive","teal","peach","coral","gold","silver"];
+               colorcambio=colores[Math.floor(Math.random()*colores.length)];
+              crear2=document.getElementById("ttl");
+              crear2.style.color=colorcambio;
+              crear.style.color=colorcambio;
+              body=document.getElementById("todo");
+              body.style.background=colorcambio;
+              setTimeout(uno,100);
+              
+            }
+            uno();
           }
+        
+           
+          
+          
           window.addEventListener("load",iniciar);
       </script>
    </body>
