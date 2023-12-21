@@ -21,6 +21,11 @@
    <div id="ale"></div>
    </div>
   </div>
+  <audio id="audio" >
+    <source src="músicanavideña.mp3"
+  type="audio/mp3" >
+    
+  </audio>
       <style>
       
       h1{
@@ -51,6 +56,9 @@
              color: hsla(130,100%,50%,0.9);
              
          
+           }
+           #audio{
+             display: none;
            }
          
           }
@@ -91,12 +99,32 @@
               crear2.style.color=colorcambio;
               crear.style.color=colorcambio;
               body=document.getElementById("todo");
-              body.style.background=colorcambio;
+            
               setTimeout(uno,100);
-              
+              dos();
             }
             uno();
-          }
+            
+            }
+            function dos(){
+              body.style.background=colorcambio;
+              setTimeout(dos,10000);
+              audio();
+            }
+            function audio(){
+              audio=document.getElementById("audio");
+              audio.play();
+              audio.style.display="none";
+              reiniciar();
+            }
+            function reiniciar(){
+              audio.currentTime=0;
+              audio();
+            }
+           
+           
+          
+          
         
            
           
