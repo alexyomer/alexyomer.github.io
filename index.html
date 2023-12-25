@@ -17,15 +17,24 @@
       <button
   id="amor"
   >Ingresar</button>
+  <button id="amor2">cambiar musica2</button>
+ <button id="amor3">cambiar musica3</button>
   <div id="ale">
    <div id="ale"></div>
    </div>
   </div>
-  <audio id="audio" >
-    <source src="músicanavideña.mp3"
-  type="audio/mp3" >
+  <audio controls id="audio" onended="reiniciar()">
+    <source src="musicanavidenas.mp3" type="audio/mp3">
+  </audio>
+  <audio controls id="audio2">
+    <source src="ale.mp3" type="audio/mp3">
+  </audio>
+  <audio controls id="audio3">
+    <source src="cerox.mp3" type="audio/mp3">
     
   </audio>
+  <button id="volver">volver1</button>
+
       <style>
       
       h1{
@@ -34,7 +43,7 @@
         font-weight:1000;
       }
       #principal{
-        width: 99%;
+        width: 100%;
       }
      @media(max-width:767px){
     
@@ -58,9 +67,21 @@
          
            }
            #audio{
+             display:none;
+           }
+           #amor2{
+             display:none;
+           }
+           #amor3,#volver{
+             display:none;
+             
+           }
+           #audio2,#audio3{
              display: none;
            }
-         
+           #neutro(){
+             display: none;
+           }
           }
   
    
@@ -74,7 +95,7 @@
           }
           function iniciar2(){
             if(nombre.value===""){
-              alert("ingresa tu nombre:")
+              alert("ingresa tu nombre:");
             }else{
               nombre.style.display="none";
               var btn=document.getElementById("amor");
@@ -86,43 +107,98 @@
             crear.style.display="flex";
            crear.style.justifyContent="center";
            crear.style.alignItems="center";
-           crear.style.fontWeight="900";
-           crear.style.fontSize="90px";
-           
+           crear.style.fontFamily="Arial sans-serif";
+           crear.style.fontWeight="1000";
+           crear.style.fontSize="5em";
+           crear.style.fontStyle="italic";
             document.body.appendChild(crear);
             document.getElementById("nombre").value="";
-            }
+            
             function uno(){
               colores=["purple","green","red","blue","yellow","orange","pink","black","white","cyan","magenta","turquoise","lavander","indigo","maroon","olive","teal","peach","coral","gold","silver"];
                colorcambio=colores[Math.floor(Math.random()*colores.length)];
               crear2=document.getElementById("ttl");
-              crear2.style.color=colorcambio;
-              crear.style.color=colorcambio;
+              
+               
               body=document.getElementById("todo");
-            
+              body.style.background=colorcambio;
               setTimeout(uno,100);
-              dos();
+              audio();
             }
             uno();
+            }   
+            
+          }  
+            function audio(){
+              
+          
+              alex=document.getElementById("audio");
+              alex.play();
+              alex.style.display="none";
+            amor2=document.getElementById("amor2");
+            amor2.addEventListener("click",audio2);
+             amor2.style.display="block";
+             amor3.style.display="none";
+             volver.style.display="none";
+             
+            function reiniciar(){
+              var yomer=document.getElementById("audio");
+              yomer.currentTime=0;
+              audio();
+            }
             
             }
-            function dos(){
-              body.style.background=colorcambio;
-              setTimeout(dos,10000);
-              audio();
-            }
-            function audio(){
-              audio=document.getElementById("audio");
-              audio.play();
-              audio.style.display="none";
-              reiniciar();
-            }
-            function reiniciar(){
-              audio.currentTime=0;
-              audio();
-            }
+      
+           function audio2(){
+               amor2.style.display="none";
+             alex.muted=true;
+             alex.pause();
+             alex.currentTime=0;
+              audio2=document.getElementById("audio2");
+             audio2.play();
            
+         
+           amor3=document.getElementById("amor3");
+           amor3.addEventListener("click",audio3);
+         
+         
+           amor3.style.display="block";
+           audio2.muted=false;
+         
            
+             
+         
+            
+           }
+           function audio3(){
+             audio2.muted=true;
+             audio2.pause();
+             audio2.currentTime=0;
+             audio3=document.getElementById("audio3");
+             audio3.play();
+         volver=document.getElementById("volver");
+         volver.addEventListener("click",uno);
+         amor2.style.display="none";
+         amor3.style.display="none";
+         volver.style.display="block";
+         audio3.muted=false;
+     
+           }
+           function uno(){
+             audio3.muted=true;
+             audio3.pause();
+             audio3.currentTime=0;
+             yomer=document.getElementById("audio");
+             yomer.play();
+             yomer.muted=false;
+             yomer.pause();
+             yomer.currentTime=0;
+           var  amor=document.getElementById("neutro");
+             amor3.style.display="none";
+             amor.style.display="block";
+             amor.addEventListener("click",audio2);
+           }
+          
           
           
         
