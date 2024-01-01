@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
    <head>
-     <title>Feliz Navidad</title>
+     <title>Año2024.C</title>
        <meta charset="UTF-8">
        <meta http-equiv="X-UA-compatible" content="IE-edge">
        <meta name="viewport" content="width=device=width, initial-scale=1.0">
     
    </head>
    <body id="todo">
-     <h1 id="ttl">Estilo Navideño(EN): </h1>
+     <h1 id="ttl"></h1></h1>
      <div id="principal">
       
       <input type="text" id="nombre" placeholder="nombre">
@@ -98,6 +98,7 @@
       
       <script>
           function iniciar(){
+            
             nombre=document.getElementById("nombre");
             var btn=document.getElementById("amor");
             btn.addEventListener("click",iniciar2);
@@ -112,7 +113,7 @@
             
             nmbr=document.getElementById("nombre").value;
             crear=document.getElementById("ale");
-            crear.innerHTML="Feliz Navidad  "+nmbr+" 🌿 ";
+            crear.innerHTML="Feliz Año 2024   "+nmbr+" 🌿 ";
             crear.style.display="flex";
            crear.style.justifyContent="center";
            crear.style.alignItems="center";
@@ -120,6 +121,8 @@
            crear.style.fontWeight="1000";
            crear.style.fontSize="5em";
            crear.style.fontStyle="italic";
+           crear.style.textShadow="4px 4px 4px purple ";
+        
             document.body.appendChild(crear);
             document.getElementById("nombre").value="";
             
@@ -141,7 +144,7 @@
           }  
             function audio(){
               audio=document.getElementById("audio");
-              lista=["musicanavidenas.mp3","corali2.mp3","time.mp3"];
+              lista=["corali.mp3","corali2.mp3","coralih.mp3"];
               currentIndex=0;
               amor2=document.getElementById("amor2");
               amor2.style.display="block";
